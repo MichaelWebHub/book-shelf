@@ -1,0 +1,97 @@
+@import "../../_utils/variables";
+
+.book__details {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: rgba(#222, 0.8);
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form__wrapper {
+  overflow-y: auto;
+  width: 480px;
+  height: 100%;
+  padding: 40px;
+  background: $light_golden;
+  transform: translateX(100%);
+  animation: enter 0.4s ease-out forwards;
+}
+
+.form__wrapper.leave {
+  transform: translateX(0);
+  animation: leave 0.4s ease-out forwards;
+}
+
+@keyframes enter {
+  to {transform: translateX(0)}
+}
+
+@keyframes leave {
+  to {transform: translateX(100%)}
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form__label {
+  @include standardText;
+}
+
+.form__input {
+  margin-top: 6px;
+  @include input;
+}
+
+.form__input--hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.form__button {
+  width: 120px;
+  margin-left: auto;
+  @include button;
+  background: $green;
+}
+
+.form__button[disabled] {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.form__button--margin {
+  margin-top: 6px;
+}
+
+.custom-input {
+  margin-left: 0;
+}
+
+.custom-input__label {
+  @include standardText;
+  margin-top: 6px;
+}
+
+.form__book-cover {
+  margin-top: 6px;
+  width: 120px;
+  height: 140px;
+  background: $green;
+}
+
+@media (max-width: 1024px) {
+  .form__wrapper {
+    max-width: 480px;
+    width: 100%;
+  }
+}

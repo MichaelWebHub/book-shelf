@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="shelf">
+
+  <ng-container *ngIf="param$ | async as param">
+    <div class="shelf__book" *ngFor="let book of (books$ | async | search:str | sorting:param)">
+      <app-book [book]="book"></app-book>
+    </div><div class="shelf__book" *ngFor="let book of (books$ | async | search:str | sorting:param)">
+      <app-book [book]="book"></app-book>
+    </div><div class="shelf__book" *ngFor="let book of (books$ | async | search:str | sorting:param)">
+      <app-book [book]="book"></app-book>
+    </div><div class="shelf__book" *ngFor="let book of (books$ | async | search:str | sorting:param)">
+      <app-book [book]="book"></app-book>
+    </div><div class="shelf__book" *ngFor="let book of (books$ | async | search:str | sorting:param)">
+      <app-book [book]="book"></app-book>
+    </div><div class="shelf__book" *ngFor="let book of (books$ | async | search:str | sorting:param)">
+      <app-book [book]="book"></app-book>
+    </div><div class="shelf__book" *ngFor="let book of (books$ | async | search:str | sorting:param)">
+      <app-book [book]="book"></app-book>
+    </div><div class="shelf__book" *ngFor="let book of (books$ | async | search:str | sorting:param)">
+      <app-book [book]="book"></app-book>
+    </div>
+  </ng-container>
+
+
+  <router-outlet></router-outlet>
+
+</div>

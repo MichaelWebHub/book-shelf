@@ -1,0 +1,53 @@
+<div class="book__details" (click)="goBack()">
+
+  <div class="form__wrapper" #wrapper (click)="$event.stopPropagation()">
+    <form class="book__form" *ngIf="dataLoaded" [formGroup]="bookForm">
+
+      <input type="hidden" [formControl]="bookForm.get('id')">
+
+      <div class="form__group">
+        <label class="form__label"> Cover </label>
+
+        <label class="form__button form__button--margin custom-input">
+          <span> + Add cover</span>
+          <input type="file" class="form__input form__input--hidden" name="image" autocomplete="off" #file>
+        </label>
+      </div>
+
+      <div class="form__group">
+        <label class="form__label"> Title </label>
+        <input type="text" class="form__input" [formControl]="bookForm.get('title')" autocomplete="off" [maxLength]="30" required>
+      </div>
+
+
+      <div class="form__group" *ngFor="let author of bookForm.get('authors')?.controls; let i = index">
+        <label class="form__label"> Author </label>
+
+        <input type="text" class="form__input" placeholder="First name"
+               [formControl]="author.value.controls.name" autocomplete="off" [maxLength]="20" required>
+        <input type="text" class="form__input" placeholder="Last name"
+               [formControl]="author.value.controls.surname" autocomplete="off" [maxLength]="20" required>
+      </div>
+
+      <div class="form__group">
+        <button class="form__button" type="button" (click)="addAuthor()">+ Add author</button>
+      </div>
+
+      <div class="form__group">
+        <label class="form__label"> ISBN </label>
+        <input type="text" class="form__input" [formControl]="bookForm.get('isbn')" autocomplete="off"
+        [pattern]="'^(?=(?:\\D*\\d){10}(?:(?:\\D*\\d){3})?$)[\\d-]+$'" required>
+      </div>
+
+      <div class="form__group">
+        <label class="form__label"> Published </label>
+        <input type="text" class="form__input" [formControl]="bookForm.get('published')" autocomplete="off">
+      </div>
+
+      <div class="form__group form__group--submit">
+        <button class="form__button" [disabled]="bookForm.get('published').value < 1800 || bookForm.invalid" (click)="onSubmit()">Add</button>
+      </div>
+    </form>
+  </div>
+
+</div>

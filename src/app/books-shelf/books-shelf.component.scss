@@ -1,0 +1,21 @@
+.shelf {
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shelf__book {
+  width: 33.33333%;
+}
+
+@media (max-width: 1024px) {
+  .shelf__book {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .shelf__book {
+    width: 100%;
+  }
+}

@@ -1,0 +1,36 @@
+@import "../../_utils/variables";
+
+.shelf__header {
+  height: 100px;
+  background: $light;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.shelf__search-form {
+  width: 100%;
+  height: 100%;
+  flex: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.search__input {
+  @include input;
+}
+
+.add__book {
+  @include button;
+  margin-left: auto;
+  width: 120px;
+}
+
+.sort__button {
+  @include button;
+  margin-left: 10px;
+}
+
+.sort__button.active {
+  background: $green;
+}

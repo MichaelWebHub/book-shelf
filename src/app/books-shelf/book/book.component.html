@@ -1,0 +1,23 @@
+<article class="book">
+
+  <img [src]="book.image" [alt]="book.title" class="book__image">
+
+  <div class="book__info">
+    <h3 class="book__title"> {{book.title}} </h3>
+
+    <div class="book__authors" *ngFor="let author of book.authors">
+      <p class="book__author">
+        <span>{{author.name}}</span>
+        <span>{{author.surname}}</span>
+      </p>
+    </div>
+
+    <p class="book__isbn">ISBN: {{book.isbn}}</p>
+    <p class="book__published" *ngIf="book.published">{{book.published}}</p>
+
+    <div class="book__menu-wrapper">
+      <app-book-menu [id]="book.id"></app-book-menu>
+    </div>
+  </div>
+
+</article>

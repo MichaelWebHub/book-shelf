@@ -1,0 +1,16 @@
+<header class="shelf__header">
+
+  <form class="shelf__search-form">
+
+    <input type="text" class="search__input" placeholder="Search..." #input (input)="onChange(input)">
+
+    <button class="sort__button"
+            [class.active]="button.id === activeButton"
+            *ngFor="let button of buttons"
+            (click)="sort(button.id)"> {{button.label}} </button>
+
+  </form>
+
+  <button class="add__book" routerLink="add"> Add Book </button>
+
+</header>

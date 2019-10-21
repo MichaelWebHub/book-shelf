@@ -1,0 +1,68 @@
+@import "../../../_utils/variables";
+
+.book {
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  transition: box-shadow 0.25s ease-out;
+}
+
+.book:hover {
+  box-shadow: 2px 2px 15px 0 $light_golden;
+}
+
+.book__image {
+  width: 120px;
+  height: 140px;
+  background: $green;
+}
+
+.book__info {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.book__title {
+  @include standardText;
+  font-weight: 600;
+  font-size: 22px;
+  color: $titleColor;
+}
+
+.book__authors {
+  margin-top: 5px;
+}
+
+.book__author:first-of-type {
+  margin-top: 0;
+}
+
+.book__author {
+  margin-top: 2px;
+  @include standardText;
+}
+
+.book__author span {
+  margin-right: 4px;
+}
+
+.book__isbn {
+  margin-top: 2px;
+  @include standardText;
+  color: $descriptionText;
+}
+
+.book__published {
+  margin-top: 2px;
+  @include standardText;
+  color: $descriptionText;
+}
+
+.book__menu-wrapper {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+}

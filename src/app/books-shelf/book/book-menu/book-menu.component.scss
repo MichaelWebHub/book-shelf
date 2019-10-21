@@ -1,0 +1,21 @@
+@import "../../../../_utils/variables";
+
+.book__menu {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+
+.menu__button {
+  margin-left: 10px;
+  @include standardText;
+  color: $descriptionText;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+
+  &:hover {
+    color: $textColor;
+  }
+}
